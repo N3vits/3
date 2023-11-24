@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <style>
+        /* Estilos adicionales específicos para esta página */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            border: 1px solid #2d3748;
+            padding: 15px;
+            border-radius: 8px;
+            transition: transform 0.2s ease-in-out;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .product-details {
+            font-size: 14px;
+            color: #cbd5e0;
+        }
+
+        /* Banner de Productos Destacados */
+        .featured-banner {
+            background-color: #4a5568;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .featured-products {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .featured-product {
+            max-width: 200px;
+            text-align: center;
+        }
+
+        .featured-product img {
+            max-width: 100%;
+            border-radius: 4px;
+        }
+
+        /* Menú desplegable de opciones para cada producto */
+        .product-options {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        /* Estilos para el menú de navegación */
+        .navigation {
+            background-color: #2d3748;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            color: white;
+        }
+
+        .navigation a {
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <!-- Barra de Navegación (puede personalizar según sus necesidades) -->
+    <nav class="bg-green-800 p-4 text-white text-center">
+        <h1 class="text-lg font-semibold">Lista de Productos</h1>
+    </nav>
+
+    <!-- Banner de Productos Destacados -->
+    <div class="featured-banner">
+        <h2 class="text-xl font-semibold mb-4">Nuevos Productos Destacados</h2>
+        <div class="featured-products">
+            <!-- Producto Destacado 1 -->
+            <div class="featured-product">
+                <img src="https://via.placeholder.com/200" alt="Producto Destacado 1">
+                <p>Producto 1</p>
+            </div>
+
+            <!-- Producto Destacado 2 -->
+            <div class="featured-product">
+                <img src="https://via.placeholder.com/200" alt="Producto Destacado 2">
+                <p>Producto 2</p>
+            </div>
+            <!-- Agregue más productos destacados según sea necesario -->
+        </div>
+    </div>
+
+    <!-- Contenido de la Página -->
+    <div class="container mx-auto mt-8 p-4">
+
+        <!-- Grid de Productos -->
+        <div class="product-grid">
+            <!-- Producto 1 -->
+            <div class="product-card">
+                <div class="product-options">
+                    <div class="dropdown">
+                        <button class="text-xs bg-gray-700 p-2 rounded">Options</button>
+                        <div class="dropdown-content">
+                            <a href="#">Edit</a>
+                            <a href="#">Delete</a>
+                        </div>
+                    </div>
+                </div>
+                <img src="https://via.placeholder.com/250" alt="Producto 1" class="product-image">
+                <div class="product-details">
+                    <h3 class="font-semibold">Producto 1</h3>
+                    <p>Fecha de Creación: 01/01/2023</p>
+                </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="product-card">
+                <div class="product-options">
+                    <div class="dropdown">
+                        <button class="text-xs bg-gray-700 p-2 rounded">Options</button>
+                        <div class="dropdown-content">
+                            <a href="#">Edit</a>
+                            <a href="#">Delete</a>
+                        </div>
+                    </div>
+                </div>
+                <img src="https://via.placeholder.com/250" alt="Producto 2" class="product-image">
+                <div class="product-details">
+                    <h3 class="font-semibold">Producto 2</h3>
+                    <p>Fecha de Creación: 02/01/2023</p>
+                </div>
+            </div>
+            <!-- Agregue más productos según sea necesario -->
+        </div>
+
+    </div>
+
+    <!-- Menú de Navegación -->
+    <div class="navigation">
+        <a href="/">Home</a>
+        <a href="/profile">Profile</a>
+        <a href="/">Logout</a>
+    </div>
+
+    <!-- Script para manejar el menú desplegable -->
+    <script>
+        const dropdowns = document.querySelectorAll('.dropdown');
+        dropdowns.forEach((dropdown) => {
+            const button = dropdown.querySelector('button');
+            const content = dropdown.querySelector('.dropdown-content');
+            button.addEventListener('click', () => {
+                content.classList.toggle('hidden');
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="bg-gray-200">
+
+    <!-- Barra de Navegación -->
+    <nav class="bg-blue-500 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo o Nombre del Sitio -->
+            <a href="#" class="text-white text-lg font-semibold">Admin Panel</a>
+
+            <!-- Menú de Navegación -->
+            <div class="space-x-4">
+                <a href="#" class="text-white">Home</a>
+                <a href="/profile" class="text-white">Profile</a>
+
+                <!-- User Management -->
+                <div class="group inline-block relative">
+                    <a href="#" class="text-white group-hover:bg-blue-600">User Management</a>
+                    <div class="absolute hidden bg-white text-gray-800 pt-2 group-hover:block shadow-md">
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-200">Add User</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-200">Delete User</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-200">List Users</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-200">Update User</a>
+                    </div>
+                </div>
+
+                <a href="#" class="text-white">List Products</a>
+                <a href="#" class="text-white">Create Product</a>
+                <a href="#" class="text-white">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido del Panel de Administración -->
+    <div class="container mx-auto mt-8 p-4">
+        <!-- Contenido del panel va aquí -->
+        <h1 class="text-3xl font-semibold mb-4">Panel de Administración</h1>
+        <p>¡Bienvenido al panel de administración! Aquí puedes realizar diversas operaciones.</p>
+    </div>
+
+    <!-- Script para manejar la visibilidad del menú -->
+    <script>
+        const userManagementLink = document.querySelector('.group');
+        const userManagementMenu = document.querySelector('.group div');
+
+        userManagementLink.addEventListener('mouseenter', () => {
+            userManagementMenu.classList.remove('hidden');
+            userManagementMenu.classList.add('block');
+        });
+
+        userManagementLink.addEventListener('mouseleave', () => {
+            userManagementMenu.classList.remove('block');
+            userManagementMenu.classList.add('hidden');
+        });
+    </script>
+
+</body>
+</html>
