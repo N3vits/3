@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { home, products, profile, storage, updateProfile } from "../controller/user.controller.js";
+import { home, products, profile, updateProfile } from "../controller/user.controller.js";
 import { upload } from "../middlewares/middlewares.js";
 
 export const router = Router();
