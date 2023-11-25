@@ -16,6 +16,10 @@ export function profile(req, res) {
     res.render('profile', {title: 'Home Page'})
 }
 
+export function homePage(req, res) {
+    res.render('home', {title: "Home Page"})
+}
+
 
 export async function updateProfile(req, res) {
     const {name, email, image} = req.body

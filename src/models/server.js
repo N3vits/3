@@ -6,6 +6,7 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
 import { router as usersRoutes } from '../routes/user.routes.js'
+import { router as authRoutes } from '../routes/auth.routes.js';
 
 
 dotenv.config()
@@ -36,6 +37,7 @@ export class Server {
 
     routing(){
         this.app.use('/', usersRoutes)
+        this.app.use('/auth', authRoutes)
     }
 
     listening(){
